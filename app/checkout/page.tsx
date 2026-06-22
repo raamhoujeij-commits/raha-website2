@@ -71,35 +71,7 @@ function CheckoutForm({
           Payment Details
         </p>
         <div className="border border-gold/20 p-4 bg-black/30">
-          <PaymentElement
-            options={{
-              layout: "tabs",
-              appearance: {
-                theme: "night",
-                variables: {
-                  colorPrimary: "#C9A96E",
-                  colorBackground: "#000000",
-                  colorText: "#F5EDD6",
-                  colorTextPlaceholder: "#F5EDD640",
-                  colorDanger: "#C4622D",
-                  fontFamily: "Cormorant Garamond, serif",
-                  borderRadius: "0px",
-                  spacingUnit: "4px",
-                },
-                rules: {
-                  ".Input": {
-                    border: "1px solid #C9A96E44",
-                    backgroundColor: "transparent",
-                    color: "#F5EDD6",
-                  },
-                  ".Input:focus": { border: "1px solid #C9A96E99" },
-                  ".Label": { color: "#F5EDD640", letterSpacing: "0.1em" },
-                  ".Tab": { border: "1px solid #C9A96E22", backgroundColor: "transparent" },
-                  ".Tab--selected": { border: "1px solid #C9A96E66", backgroundColor: "#C9A96E0A" },
-                },
-              },
-            }}
-          />
+          <PaymentElement options={{ layout: "tabs" }} />
         </div>
       </div>
 
@@ -262,7 +234,34 @@ export default function CheckoutPage() {
             ) : clientSecret ? (
               <Elements
                 stripe={stripePromise}
-                options={{ clientSecret, locale: "en" }}
+                options={{
+                  clientSecret,
+                  locale: "en",
+                  appearance: {
+                    theme: "night",
+                    variables: {
+                      colorPrimary: "#C9A96E",
+                      colorBackground: "#000000",
+                      colorText: "#F5EDD6",
+                      colorTextPlaceholder: "#F5EDD640",
+                      colorDanger: "#C4622D",
+                      fontFamily: "Cormorant Garamond, serif",
+                      borderRadius: "0px",
+                      spacingUnit: "4px",
+                    },
+                    rules: {
+                      ".Input": {
+                        border: "1px solid #C9A96E44",
+                        backgroundColor: "transparent",
+                        color: "#F5EDD6",
+                      },
+                      ".Input:focus": { border: "1px solid #C9A96E99" },
+                      ".Label": { color: "#F5EDD640", letterSpacing: "0.1em" },
+                      ".Tab": { border: "1px solid #C9A96E22", backgroundColor: "transparent" },
+                      ".Tab--selected": { border: "1px solid #C9A96E66", backgroundColor: "#C9A96E0A" },
+                    },
+                  },
+                }}
               >
                 <div className="space-y-4 mb-6">
                   <button
