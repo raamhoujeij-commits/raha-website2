@@ -15,6 +15,9 @@ data/
 .env.local
 .env.*.local
 
+# Auto-generated
+next-env.d.ts
+
 # Misc
 .DS_Store
 *.pem
