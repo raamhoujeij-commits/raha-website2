@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { stripe } from "@/lib/stripe";
+import { getStripe } from "@/lib/stripe";
 
 export async function POST(req: NextRequest) {
   try {
@@ -18,7 +18,7 @@ export async function POST(req: NextRequest) {
       0
     );
 
-    const paymentIntent = await stripe.paymentIntents.create({
+    const paymentIntent = await getStripe().paymentIntents.create({
       amount: amount * 100, // Stripe expects öre
       currency: "sek",
       metadata: {
