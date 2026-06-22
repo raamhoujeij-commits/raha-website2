@@ -7,8 +7,9 @@ node_modules/
 .next/
 out/
 
-# Data (waitlist & contact submissions — keep locally, don't commit)
-data/
+# Runtime data (waitlist & contact submissions — keep locally, don't commit)
+data/waitlist.json
+data/contacts.json
 
 # Env
 .env

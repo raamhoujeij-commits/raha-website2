@@ -3,11 +3,12 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
+import { useCartStore } from "@/store/cartStore";
 
 const links = [
   { href: "/", label: "Home" },
+  { href: "/shop", label: "Shop" },
   { href: "/about", label: "About" },
-  { href: "/products", label: "Products" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -15,6 +16,8 @@ export default function Navbar() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const { openCart, totalItems } = useCartStore();
+  const count = totalItems();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -43,7 +46,7 @@ export default function Navbar() {
               <Link
                 href={href}
                 className={`font-cormorant text-sm tracking-widest font-light transition-colors duration-300 ${
-                  pathname === href
+                  pathname === href || (href === "/shop" && pathname.startsWith("/shop"))
                     ? "text-gold"
                     : "text-cream/60 hover:text-gold-light"
                 }`}
@@ -54,16 +57,36 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Mobile toggle */}
-        <button
-          className="md:hidden text-gold/80 hover:text-gold transition-colors"
-          onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
-        >
-          <span className="block w-6 h-px bg-current mb-1.5 transition-all" />
-          <span className="block w-4 h-px bg-current mb-1.5 ml-auto transition-all" />
-          <span className="block w-6 h-px bg-current transition-all" />
-        </button>
+        <div className="flex items-center gap-5">
+          {/* Cart button */}
+          <button
+            onClick={openCart}
+            className="relative text-cream/60 hover:text-gold transition-colors duration-300"
+            aria-label="Open cart"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <path d="M16 10a4 4 0 01-8 0" />
+            </svg>
+            {count > 0 && (
+              <span className="absolute -top-2 -right-2 w-4 h-4 bg-gold rounded-full flex items-center justify-center text-black font-cormorant text-xs leading-none">
+                {count}
+              </span>
+            )}
+          </button>
+
+          {/* Mobile toggle */}
+          <button
+            className="md:hidden text-gold/80 hover:text-gold transition-colors"
+            onClick={() => setOpen(!open)}
+            aria-label="Toggle menu"
+          >
+            <span className="block w-6 h-px bg-current mb-1.5 transition-all" />
+            <span className="block w-4 h-px bg-current mb-1.5 ml-auto transition-all" />
+            <span className="block w-6 h-px bg-current transition-all" />
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}

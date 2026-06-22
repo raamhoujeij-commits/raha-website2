@@ -1,0 +1,62 @@
+[
+  {
+    "id": "oud-al-layali",
+    "name": "Oud Al Layali",
+    "arabic": "عود الليالي",
+    "tagline": "Nights of Oud",
+    "description": "A deep, resinous blend of aged agarwood and warm amber. Burns long and slowly, leaving a trail of dark sweetness that lingers through the night. This is bakhoor for the ceremony of rest — light it when the day is done.",
+    "scent_notes": ["Agarwood", "Dark Amber", "Musk", "Sandalwood"],
+    "how_to_use": "Place one to two pieces on a burning charcoal disc or electric bakhoor burner. Allow 60–90 seconds for the smoke to develop before moving the burner through your space. One piece perfumes a room for 20–30 minutes.",
+    "intensity": "DEEP",
+    "scent_type": "Woody",
+    "weight_g": 50,
+    "price_sek": 495,
+    "stock": 24,
+    "featured": true
+  },
+  {
+    "id": "zahrat-al-sabah",
+    "name": "Zahrat Al Sabah",
+    "arabic": "زهرة الصباح",
+    "tagline": "Morning Flower",
+    "description": "A lighter, floral bakhoor for the morning ritual. Rose water and white oud open the senses gently, like sunlight through silk curtains. The smoke is soft and dissipates cleanly — made for quiet mornings, not grand ceremony.",
+    "scent_notes": ["White Oud", "Rose", "Jasmine", "Light Musk"],
+    "how_to_use": "Use one piece on low heat to keep the smoke light and transparent. Ideal for smaller rooms, bathrooms, or as a personal scent ritual before dressing. Pairs well with morning coffee.",
+    "intensity": "LIGHT",
+    "scent_type": "Floral",
+    "weight_g": 50,
+    "price_sek": 445,
+    "stock": 18,
+    "featured": true
+  },
+  {
+    "id": "ramad",
+    "name": "Ramad",
+    "arabic": "رماد",
+    "tagline": "Ember & Ash",
+    "description": "Our most modern blend. Smoky, dry, with an edge of burnt wood and vetiver. For those who wear their home like a signature — Ramad is deliberate, architectural, unforgettable. A bakhoor that demands a room worthy of it.",
+    "scent_notes": ["Burnt Wood", "Vetiver", "Benzoin", "Black Pepper"],
+    "how_to_use": "Use sparingly — one piece is enough for a large living room. Best on traditional charcoal for maximum smoke and intensity. Allow 10 minutes to fully develop before guests arrive.",
+    "intensity": "BOLD",
+    "scent_type": "Smoky",
+    "weight_g": 50,
+    "price_sek": 545,
+    "stock": 12,
+    "featured": true
+  },
+  {
+    "id": "nour",
+    "name": "Nour",
+    "arabic": "نور",
+    "tagline": "Light",
+    "description": "A luminous, transparent blend. Citrus woods and light resins create a clean, radiant smoke — effortless for daily use in any European interior. Nour bridges traditions: familiar enough for those new to bakhoor, refined enough for connoisseurs.",
+    "scent_notes": ["Citrus Wood", "Light Resin", "Bergamot", "White Musk"],
+    "how_to_use": "The most versatile RAHA blend. Use one piece on an electric burner for a gentle, continuous scent or on charcoal for a stronger presence. Ideal as an everyday home fragrance.",
+    "intensity": "FRESH",
+    "scent_type": "Fresh",
+    "weight_g": 50,
+    "price_sek": 395,
+    "stock": 30,
+    "featured": false
+  }
+]
